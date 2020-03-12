@@ -43,8 +43,8 @@ public class FileController {
         return ResponseEntity.ok(result);
     }
     @GetMapping("/deleteByPath")
-    public ResponseEntity<String> deleteByPath(){
-        String filePathName="";
+    public ResponseEntity<String> deleteByPath(String fileName){
+        String filePathName=fileName;
         fileDfsUtil.deleteFile(filePathName);
         return ResponseEntity.ok("success");
     }

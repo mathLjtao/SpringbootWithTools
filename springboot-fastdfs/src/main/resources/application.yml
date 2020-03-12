@@ -17,4 +17,4 @@ fdfs:
   thumb-image:
     width: 150
     height: 150
-  tracker-list: 192.168.23.129:22122
+  trackerList: 192.168.37.129:22122
