@@ -3,6 +3,6 @@
 **/mvnw
 **/mvnw.cmd
 **/*.iml
-
+**/.gitignore
 
 .idea
