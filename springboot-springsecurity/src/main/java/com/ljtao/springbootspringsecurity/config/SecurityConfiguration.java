@@ -18,6 +18,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+    //授权
+
     //configure(HttpSecurity) 配置如何通过连接器的保护
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -49,7 +51,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.rememberMe().rememberMeParameter("remember");
     }
 
-
+    //密码编码：PasswordEncoder
+    //在SpringSecurity 5.0+ 新增了很多加密的方法
+    //认证
     //configure(AuthenticationManagerBuilder) 配置user-detail服务
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

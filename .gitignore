@@ -4,5 +4,6 @@
 **/mvnw.cmd
 **/*.iml
 **/.gitignore
+**/target
 
 .idea
