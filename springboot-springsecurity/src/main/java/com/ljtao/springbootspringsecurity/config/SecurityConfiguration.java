@@ -28,6 +28,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().and()
                 .httpBasic();
+
+        //开启自动配置的登录功能：如果没有权限，就会跳转到登录页面！
+        // /login 请求来到登录页
+        // /login?error 重定向到这里表示登录失败
+//        http.formLogin()
+//                .usernameParameter("username")
+//                .passwordParameter("password")
+//                .loginPage("/toLogin")
+//                .loginProcessingUrl("/login"); // 登陆表单提交请求
+
+        http.csrf().disable();//关闭csrf功能:跨站请求伪造,默认只能通过post方式提交logout请求
+
+        //开启自动配置的注销的功能
+        // /logout 注销请求
+        // .logoutSuccessUrl("/"); 注销成功来到首页
+        http.logout().logoutSuccessUrl("/");
+
+        //记住我
+        http.rememberMe().rememberMeParameter("remember");
     }
 
 
