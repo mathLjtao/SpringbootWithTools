@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
 
@@ -73,6 +74,32 @@ public class FileController {
         response.getOutputStream().close();
         return ResponseEntity.ok("");
     }
+    /*
+    第二种下载文件做法
+     */
+    @RequestMapping("/downloadFile2/{id}")
+    public ResponseEntity<String> downloadFile2(@PathVariable String id, HttpServletResponse response) throws IOException {
+        String filePath="测试.txt";
+        int i = filePath.lastIndexOf("/")+1;
+        String substring = filePath.substring(i);
+
+
+        String fileName= URLEncoder.encode("测试","UTF8");
+
+        byte[] b=new byte[]{'a','b','c',94,95,'9',9};
+
+        String fileSuffixName=filePath.substring(filePath.lastIndexOf(".")+1);
+        response.reset(); //清除缓存
+        response.setContentType("application/" +fileSuffixName + ";" +"charset = UTF-8"); //设置字符集和文件后缀名
+        response.setHeader("Content-Disposition","attachment; filename=" +fileName+"."+fileSuffixName); // 设置文件名称
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(response.getOutputStream());
+        bufferedOutputStream.write(b);
+        bufferedOutputStream.flush();
+        bufferedOutputStream.close();
+
+        return ResponseEntity.ok("");
+    }
+
 
 
     @GetMapping("/deleteByPath")
