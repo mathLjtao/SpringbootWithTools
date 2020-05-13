@@ -14,6 +14,7 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 public class UserController {
 
+    //TODO 还有一个知识，自定义校验注解
     @PostMapping("/add")
     public JsonData addUser(@RequestBody @Valid User user){
         return JsonData.success(user);

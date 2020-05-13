@@ -32,6 +32,12 @@ public class FileDfsUtil {
                 multipartFile.getSize(),originalFilename , null);
         return storePath.getFullPath() ;
     }
+    /*
+
+     */
+    public String getFile(){
+        return null;
+    }
 
     /**
      * 删除文件

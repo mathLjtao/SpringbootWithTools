@@ -30,7 +30,7 @@ public class FileController {
     /*
         http://localhost:9014/swagger-ui.html
         将返回的路径加上ip地址，就可以访问到上传的文件
-        http://192.168.23.129/group1/M00/00/00/wKhIgl0n4AKABxQEABhlMYw_3Lo825.png
+        http://192.168.37.129/group1/M00/00/00/wKhIgl0n4AKABxQEABhlMYw_3Lo825.png
      */
     @ApiOperation(value="上次文件",notes = "测试FastDFS文件上传")
     @RequestMapping(value = "/uploadFile",headers="content-type=multipart/form-data", method = RequestMethod.POST)

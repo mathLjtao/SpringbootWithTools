@@ -20,6 +20,7 @@ Idea、Eclipse
 Maven、Svn、Git
 在Linux环境下，能熟练搭建开发环境，分布式系统。
  */
+//TODO 还有一个知识，自定义校验注解
 @Data
 public class User {
     @NotNull(message = "用户id不能为空")
