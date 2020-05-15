@@ -1,6 +1,7 @@
 package com.ljtao.springbootvalidator.controller;
 
 import com.ljtao.springbootvalidator.config.ApiException;
+import com.ljtao.springbootvalidator.entity.Dept;
 import com.ljtao.springbootvalidator.entity.User;
 import com.ljtao.springbootvalidator.utils.JsonData;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 public class UserController {
 
-    //TODO 还有一个知识，自定义校验注解
+
     @PostMapping("/add")
     public JsonData addUser(@RequestBody @Valid User user){
         return JsonData.success(user);
@@ -34,5 +35,13 @@ public class UserController {
     public int testResult2(){
         return 2;
     }
+
+
+    //测试自定义校验注解
+    @PostMapping("/testMyValid")
+    public JsonData testMyValid(@RequestBody @Valid Dept dept){
+        return JsonData.success(dept);
+    }
+
 
 }
