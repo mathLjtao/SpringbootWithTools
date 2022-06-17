@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.47</version>
+            <version>1.2.83</version>
         </dependency>
 
         <!--注意： 这里的版本,要和部署在服务器上的版本号一致-->
